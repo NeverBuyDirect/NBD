@@ -15,31 +15,56 @@ $(document).ready(function () {
   function getSource(host) {
     return {
       'www.banggood.com': 'banggood',
+      'www.gearbest.com': 'gearbest',
       'www.amazon.com': 'amazon-us',
       'www.amazon.co.uk': 'amazon-uk',
+      'www.amazon.fr': 'amazon-fr',
+      'www.amazon.ca': 'amazon-ca',
+      'www.amazon.de': 'amazon-de',
+      'www.amazon.it': 'amazon-it',
+      'www.amazon.nl': 'amazon-nl',
+      'www.amazon.es': 'amazon-es',
+      'www.amazon.com.au': 'amazon-au',
+      'www.amazon.mx': 'amazon-mx',
+      'www.amazon.com.br': 'amazon-br',
+      'www.amazon.in': 'amazon-in',
+      'www.amazon.co.jp': 'amazon-jp',
+      'www.amazon.com.sg': 'amazon-sg',
+      'www.amazon.cn': 'amazon-cn',
     }[host];
   }
 
   function getSourceURI(source, parsedURI, data) {
+
+    function simpleCode(key, dataKey) {
+        return function (parsedURI, data) {
+            return parsedURI.search(function (query) {
+              query[key] = data[dataKey];
+              return query;
+            }).href()
+        }
+    }
+
+    var amazon = simpleCode('tag', 'code');
+
     var func = {
-      'banggood': function (parsedURI, data) {
-        return parsedURI.search(function (query) {
-          query.q = data.code;
-          return query;
-        }).href()
-      },
-      'amazon-us': function (parsedURI, data) {
-        return parsedURI.search(function (query) {
-          query.tag = data.code;
-          return query;
-        }).href()
-      },
-      'amazon-uk': function (parsedURI, data) {
-        return parsedURI.search(function (query) {
-          query.tag = data.code;
-          return query;
-        }).href()
-      },
+      'banggood': simpleCode('q', 'code'),
+      'gearbest': simpleCode('lkid', 'lkid'),
+      'amazon-us': amazon,
+      'amazon-uk': amazon,
+      'amazon-fr': amazon,
+      'amazon-ca': amazon,
+      'amazon-de': amazon,
+      'amazon-it': amazon,
+      'amazon-nl': amazon,
+      'amazon-es': amazon,
+      'amazon-au': amazon,
+      'amazon-mx': amazon,
+      'amazon-br': amazon,
+      'amazon-in': amazon,
+      'amazon-jp': amazon,
+      'amazon-sg': amazon,
+      'amazon-cn': amazon,
     }[source]
     if (func) return func(parsedURI, data);
     return parsedURI.href();
@@ -68,7 +93,7 @@ $(document).ready(function () {
     var parsedURI = URI(uri);
     var newURI = getNewURI(parsedURI);
     if (window.__NBD_EXTENSION__) {
-      chrome.tabs.query({currentWindow: true, active: true}, function (tab) {
+      chrome.tabs.query({ currentWindow: true, active: true }, function (tab) {
         chrome.tabs.update(tab.id, { url: newURI });
         window.close();
       });
