@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Never Buy Direct</title>
+        <link rel="icon" href="/favicon.ico" />
+        <!-- htmlbuild:css -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css" />
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
+        <!-- endbuild -->
+        <!-- htmlbuild:removeWeb -->
+        <style type="text/css">
+            html { min-width: 500px; }
+            .centred-div { width: 85% !important; }
+        </style>
+        <!-- endbuild -->
+    </head>
+    <body>
+        <div class="container-fluid main_container main d-flex">
+            <div class="row flex-fill d-flex justify-content-center">
+                <div class="centred-div align-self-center text-center">
+                    <img alt="Logo" src="/img/logo.png" />
+                    <h1>Never Buy Direct</h1>
+                    <h6>Support creative people while paying no extra</h6>
+                    <div class="input-group mt-5 mb-5 input-group-lg">
+                        <input type="text" id="uri" class="link-input form-control" aria-label="Product link" placeholder="Paste the url to the product..." />
+                        <div class="input-group-append">
+                            <button class="btn link-btn" id="go">
+                                <img src="img/search.svg"/>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- htmlbuild:removeExt -->
+                    <button class="btn btn-lg btn-outline-light" data-toggle="modal" data-target="#how">How it works ?</button>
+                    <button class="ml-1 btn btn-lg btn-light" data-toggle="modal" data-target="#submit">I'm a creator</button>
+                    <!-- endbuild -->
+                </div>
+            </div>
+        </div>
+        <!-- htmlbuild:removeExt -->
+        <div class="modal fade" id="how" tabindex="-1" role="dialog" aria-labelledby="HowIt Works" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">How it works</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-justify">
+                        <p>
+                            An affiliate program is when a business rewards an affiliate for customer brought by him. The identification is usually done via a unique link that belongs to the affiliate that leads to the product.
+                        </p>
+                        <p>
+                            When you buy something online from a store that has an affiliate program, a share of your payment was intended to be given to an affiliate, but they get to keep it since no one redirected you.
+                        </p>
+                        <p>
+                            Never Buy Direct aims to claim back that share and give to creative people like content creators and open-source contributers. When you buy something through Never Buy Direct you'll be redirected to the product with an affiliate code that belongs to one of the subscribed creators, that way they receive their small share without costing you a thing.
+                        </p>
+
+                        <p>
+                            Never Buy Direct is fully transparent, every partner has the same chances as any other, anyone can see the list of partners in the public JSON <a href="https://gist.github.com/NeverBuyDirect/cd97e752d0a01c86d4e281890ac154b8">here</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="submit" tabindex="-1" role="dialog" aria-labelledby="ImACreator" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Submit application</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>You are a content creator, open-source contributer or you do other types of contributions to a community, let us know by sending us an email to <a target="_blank" href="mailto:neverbuydirect@gmail.com">neverbuydirect@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- endbuild -->
+
+        <!-- htmlbuild:js -->
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="/js/URI.js"></script>
+        <script type="text/javascript" src="/js/script.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+.main > .row {
+    min-height: 100vh;
+
+    background-image: -moz-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+    background-image: -webkit-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+    background-image: -ms-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+    color: #fff;
+}
+
+.flex-fill {
+    flex:1 1 auto;
+}
+
+.link-input {
+    width: 100%;
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: #fff !important;
+}
+.link-input::-webkit-input-placeholder { color: rgb(255,255,255, 0.6); }  /* WebKit, Blink, Edge */
+.link-input:-moz-placeholder { color: rgb(255,255,255, 0.6); }  /* Mozilla Firefox 4 to 18 */
+.link-input::-moz-placeholder { color: rgb(255,255,255, 0.6); }  /* Mozilla Firefox 19+ */
+.link-input:-ms-input-placeholder { color: rgb(255,255,255, 0.6); }  /* Internet Explorer 10-11 */
+.link-input::-ms-input-placeholder { color: rgb(255,255,255, 0.6); }  /* Microsoft Edge */
+
+.centred-div {
+    width: 70%;
+}
+
+.link-btn svg {
+    position: relative;
+    top: 4px;
+}

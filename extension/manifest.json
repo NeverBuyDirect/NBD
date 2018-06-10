@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Never Buy Direct",
+    "description": "Support creative people while paying no extra",
+    "version": "1.0",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "browser_action": {
+        "default_icon": "icons/icon128.png",
+        "default_popup": "index.html",
+        "default_title": "Never Buy Direct"
+    },
+    "permissions": [
+        "activeTab",
+        "https://neverbuydirect.com/api/*"
+    ],
+    "content_security_policy": "script-src 'self' https://cdn.rawgit.com; object-src 'self'"
+}
